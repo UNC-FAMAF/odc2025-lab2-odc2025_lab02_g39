@@ -19,6 +19,77 @@ main:
 	movk x10, 0x3235, lsl 00
 	bl rectangle
 
+	mov x1, 320
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 64
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 128
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 192
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 256
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 384
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 448
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 512
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
+
+	mov x1, 576
+	mov x2, 240
+	mov x3, 10
+	mov x4, 240
+	movz x10, 0x32, lsl 16
+	movk x10, 0x8DA4, lsl 00
+	bl rectangle
 
 
 	// Ejemplo de uso de gpios
