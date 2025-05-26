@@ -26,7 +26,7 @@ backgroundColor:
     add sp, sp, 24
 ret
 
-setPixel: 
+setpixel: 
 
     sub sp, sp, 24
     stur x1, [sp, 0]
@@ -57,7 +57,7 @@ rectangle:
     stur lr, [sp, 32]
     
     loopRectangle0:
-        bl setPixel
+        bl setpixel
         add x1, x1, 1
         sub x3, x3, 1
         cbnz x3, loopRectangle0
