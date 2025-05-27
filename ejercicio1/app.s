@@ -1,4 +1,4 @@
-	.include "size.s"
+.include "size.s"
 	.include "shapes.s"
 	.globl main
 
@@ -11,6 +11,23 @@ main:
 	movk x10, 0x0000, lsl 00
 	bl backgroundColor
 
+	// Fondo
+
+			mov x1, 100 // coord x
+			mov x2, 170 // coord y
+			mov x3, 8   // ancho
+			mov x4, 30  // alto
+			movz x10,0x3e,lsl 16
+			movk x10, 0x686f,lsl 00
+			bl rectangle 
+
+
+			mov x1, 108 // coord x
+			mov x2, 160 // coord y
+			mov x3, 8   // ancho
+			mov x4, 40  // alto
+			bl rectangle 
+
 	// Piso
 		mov x1, 0
 		mov x2, 200
@@ -18,6 +35,44 @@ main:
 		mov x4, 280
 		movz x10, 0x04, lsl 16
 		movk x10, 0x263C, lsl 00
+		bl rectangle 
+
+		mov x1, 0 // coord x
+		mov x2, 200 // coord y
+		mov x3, 640   // ancho
+		mov x4, 5  // alto
+		movz x10,0x3e,lsl 16
+		movk x10, 0x686f,lsl 00
+		bl rectangle 
+
+		mov x1, 320 // coord x
+		mov x2, 200 // coord y
+		mov x3, 10   // ancho
+		mov x4, 280  // alto
+		bl rectangle 
+
+		mov x1, 280 // coord x
+		mov x2, 200 // coord y
+		mov x3, 10   // ancho
+		mov x4, 70  // alto
+		bl rectangle 
+
+		mov x1, 270 // coord x
+		mov x2, 270 // coord y
+		mov x3, 10   // ancho
+		mov x4, 70  // alto
+		bl rectangle 
+
+		mov x1, 260 // coord x
+		mov x2, 340 // coord y
+		mov x3, 10   // ancho
+		mov x4, 70  // alto
+		bl rectangle 
+
+		mov x1, 250 // coord x
+		mov x2, 410 // coord y
+		mov x3, 10   // ancho
+		mov x4, 70  // alto
 		bl rectangle 
 
 	// Estela
@@ -538,43 +593,6 @@ main:
 			movk x10, 0x0000, lsl 00
 			bl rectangle
 
-			//Edificio
-			mov x1, 480
-			mov x2, 60
-			mov x3, 100
-			mov x4, 140
-			movz x10, 0x30, lsl 16
-			movk x10, 0x3030, lsl 00
-			bl rectangle
-
-                        //Ventanas del Edificio
-			movz x10,0xFF,lsl 16
-			movk x10, 0xFF00,lsl 00
-
-			mov x1, 505
-			mov x2, 170
-			mov x3, 10
-			mov x4, 15
-			bl rectangle
-
-			mov x1, 545
-			mov x2, 170
-			mov x3,10
-			mov x4,15
-			bl rectangle
-
-			mov x1, 505
-			mov x2,80
-			mov x3, 10
-			mov x4, 15
-			bl rectangle
-
-			mov x1,545
-			mov x2,80
-			mov x3,10
-			mov x4,15
-			bl rectangle
-
 
 	
 
@@ -605,3 +623,4 @@ main:
 
 InfLoop:
 	b InfLoop
+ 
