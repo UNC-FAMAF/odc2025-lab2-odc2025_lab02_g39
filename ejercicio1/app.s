@@ -538,6 +538,44 @@ main:
 			movk x10, 0x0000, lsl 00
 			bl rectangle
 
+			//Edificio
+			mov x1, 480
+			mov x2, 60
+			mov x3, 100
+			mov x4, 140
+			movz x10, 0x30, lsl 16
+			movk x10, 0x3030, lsl 00
+			bl rectangle
+
+                        //Ventanas del Edificio
+			movz x10,0xFF,lsl 16
+			movk x10, 0xFF00,lsl 00
+
+			mov x1, 505
+			mov x2, 170
+			mov x3, 10
+			mov x4, 15
+			bl rectangle
+
+			mov x1, 545
+			mov x2, 170
+			mov x3,10
+			mov x4,15
+			bl rectangle
+
+			mov x1, 505
+			mov x2,80
+			mov x3, 10
+			mov x4, 15
+			bl rectangle
+
+			mov x1,545
+			mov x2,80
+			mov x3,10
+			mov x4,15
+			bl rectangle
+
+
 	
 
 
