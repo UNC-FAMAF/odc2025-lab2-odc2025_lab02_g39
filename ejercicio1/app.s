@@ -22,11 +22,116 @@ main:
 			bl rectangle 
 
 
-			mov x1, 108 // coord x
-			mov x2, 160 // coord y
-			mov x3, 8   // ancho
-			mov x4, 40  // alto
+			mov x1, 109 
+			mov x2, 180 
+			mov x3, 8   
+			mov x4, 20  
 			bl rectangle 
+
+
+			mov x1, 118 
+			mov x2, 160 
+			mov x3, 8   
+			mov x4, 40  
+			bl rectangle 
+
+			mov x1, 126 
+			mov x2, 195 
+			mov x3, 8   
+			mov x4, 5  
+			bl rectangle 
+
+			mov x1, 134 
+			mov x2, 193 
+			mov x3, 8   
+			mov x4, 7  
+			bl rectangle 
+
+			mov x1, 140 
+			mov x2, 190 
+			mov x3, 8   
+			mov x4, 10  
+			bl rectangle 
+
+			mov x1, 148 
+			mov x2, 190 
+			mov x3, 8   
+			mov x4, 10  
+			bl rectangle
+
+			mov x1, 157 
+			mov x2, 195 
+			mov x3, 8   
+			mov x4, 5  
+			bl rectangle
+
+			mov x1, 165 
+			mov x2, 193 
+			mov x3, 8  
+			mov x4, 7  
+			bl rectangle 
+
+			mov x1, 0 
+			mov x2, 193 
+			mov x3, 8   
+			mov x4, 7  
+			bl rectangle 
+
+			mov x1, 9 
+			mov x2, 190 
+			mov x3, 8   
+			mov x4, 10  
+			bl rectangle
+    
+	                mov x1, 18 
+			mov x2, 175 
+			mov x3, 8   
+			mov x4, 25  
+			bl rectangle
+
+			mov x1, 26 
+			mov x2, 185 
+			mov x3, 8   
+			mov x4, 15  
+			bl rectangle
+
+
+			mov x1, 34 
+			mov x2, 195 
+			mov x3, 8   
+			mov x4, 5  
+			bl rectangle
+
+			mov x1, 42 
+			mov x2, 194 
+			mov x3, 8   
+			mov x4, 7  
+	                bl rectangle
+
+			mov x1, 50 
+			mov x2, 195 
+			mov x3, 15   
+			mov x4, 5  
+			bl rectangle
+
+			mov x1, 65 
+			mov x2, 185 
+			mov x3, 20   
+			mov x4, 15  
+			bl rectangle
+			
+			mov x1, 85 
+			mov x2, 170 
+			mov x3, 8   
+			mov x4, 30  
+			bl rectangle
+
+			mov x1, 93 
+			mov x2, 180 
+			mov x3, 8   
+			mov x4, 20  
+			bl rectangle
+ 
 
 	// Piso
 		mov x1, 0
@@ -44,13 +149,15 @@ main:
 		movz x10,0x3e,lsl 16
 		movk x10, 0x686f,lsl 00
 		bl rectangle 
-
+       //Lineas
+                //linea1 (del centro)
 		mov x1, 320 // coord x
 		mov x2, 200 // coord y
 		mov x3, 10   // ancho
 		mov x4, 280  // alto
 		bl rectangle 
 
+		//linea2
 		mov x1, 280 // coord x
 		mov x2, 200 // coord y
 		mov x3, 10   // ancho
@@ -74,6 +181,542 @@ main:
 		mov x3, 10   // ancho
 		mov x4, 70  // alto
 		bl rectangle 
+
+                //linea 3
+
+		mov x1, 240 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 65  
+		bl rectangle 
+
+		mov x1, 230 
+		mov x2, 260 
+		mov x3, 10   
+		mov x4, 65  
+		bl rectangle 
+
+		mov x1, 220 
+		mov x2, 325 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle 
+
+		mov x1, 210 
+		mov x2, 390 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle 
+
+		mov x1, 200 
+		mov x2, 455 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle 
+
+		//linea 4
+
+		mov x1, 200 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle 
+
+		mov x1, 190 
+		mov x2, 245 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle 
+
+		mov x1, 180 
+		mov x2, 295 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle 
+
+
+		mov x1, 170 
+		mov x2, 345 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+		mov x1, 160 
+		mov x2, 390 
+		mov x3, 10   
+		mov x4, 50  
+		bl rectangle
+
+		mov x1, 150 
+		mov x2, 435 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+		//linea 5
+
+		mov x1, 160 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+ 
+                mov x1, 150 
+		mov x2, 240 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 140 
+		mov x2, 280 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 130 
+		mov x2, 320 
+		mov x3, 10   
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 120 
+		mov x2, 355 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 110 
+		mov x2, 395 
+		mov x3, 10   
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 100 
+		mov x2, 435 
+		mov x3, 10   
+		mov x4, 45  
+		bl rectangle
+
+		//linea 6
+
+		mov x1, 120 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 110 
+		mov x2, 235 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 100 
+		mov x2, 270 
+		mov x3, 10   
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 90 
+		mov x2, 315 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 80 
+		mov x2, 355 
+		mov x3, 10   
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 70 
+		mov x2, 390
+		mov x3, 10 
+		mov x4, 40 
+		bl rectangle
+
+		mov x1, 60 
+		mov x2, 425
+		mov x3, 10 
+		mov x4, 40 
+		bl rectangle
+
+		mov x1, 50 
+		mov x2, 460 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		//linea 7
+
+		mov x1, 80 
+		mov x2, 200 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 70 
+		mov x2, 230 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 60 
+		mov x2, 260 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 50 
+		mov x2, 290 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 40 
+		mov x2, 320
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 30 
+		mov x2, 350 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 20 
+		mov x2, 380 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 10 
+		mov x2, 410 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 0 
+		mov x2, 440 
+		mov x3, 10   
+		mov x4, 38  
+		bl rectangle
+
+		//linea 8
+		
+		mov x1, 40 
+		mov x2, 200 
+		mov x3, 10   
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 30 
+		mov x2, 225 
+		mov x3, 10   
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 20 
+		mov x2, 250 
+		mov x3, 10   
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 10 
+		mov x2, 275 
+		mov x3, 10   
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 0 
+		mov x2, 300
+		mov x3, 10  
+		mov x4, 30  
+		bl rectangle
+
+        //linea 2 (de la derecha)
+		mov x1, 360 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle 
+
+		mov x1, 370 
+		mov x2, 270 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle 
+
+		mov x1, 380 
+		mov x2, 340 
+		mov x3, 10   
+		mov x4, 70  
+		bl rectangle 
+
+		mov x1, 390 
+		mov x2, 410 
+		mov x3, 10   
+		mov x4, 70  
+		bl rectangle 
+
+		mov x1, 400 
+		mov x2, 480 
+		mov x3, 10   
+		mov x4, 70  
+		bl rectangle 
+
+		//linea 3 (de la derecha)
+		mov x1, 400 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 65  
+		bl rectangle
+
+		mov x1, 410 
+		mov x2, 260 
+		mov x3, 10  
+		mov x4, 65  
+		bl rectangle  
+
+
+		mov x1, 420 
+		mov x2, 325 
+		mov x3, 10   
+		mov x4, 70  
+		bl rectangle
+
+                mov x1, 430 
+		mov x2, 390 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle
+
+		mov x1, 440 
+		mov x2, 455 
+		mov x3, 10  
+		mov x4, 70  
+		bl rectangle
+
+		//linea 4 (de la derecha)
+                mov x1, 440 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+                mov x1, 450 
+		mov x2, 245 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+		mov x1, 460 
+		mov x2, 295 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+                mov x1, 470 
+		mov x2, 345 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+                mov x1, 480 
+		mov x2, 390 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+	        mov x1, 490 
+		mov x2, 435 
+		mov x3, 10  
+		mov x4, 50  
+		bl rectangle
+
+	    //linea 5(de la derecha)
+		mov x1, 480 
+		mov x2, 200 
+		mov x3, 10   
+		mov x4, 45  
+		bl rectangle
+ 
+                mov x1, 490 
+		mov x2, 240 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 500 
+		mov x2, 280 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 510 
+		mov x2, 320 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 520 
+		mov x2, 355 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 530 
+		mov x2, 395 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+		mov x1, 540 
+		mov x2, 435 
+		mov x3, 10  
+		mov x4, 45  
+		bl rectangle
+
+        //linea 6(de la derecha)
+		mov x1, 520 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 530 
+		mov x2, 235 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 540 
+		mov x2, 270 
+		mov x3, 10  
+		mov x4, 43  
+		bl rectangle
+
+		mov x1, 550 
+		mov x2, 315 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 560 
+		mov x2, 355 
+		mov x3, 10   
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 570 
+		mov x2, 390 
+		mov x3, 10  
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 580 
+		mov x2, 425 
+		mov x3, 10   
+		mov x4, 40  
+		bl rectangle
+
+		mov x1, 590 
+		mov x2, 460 
+		mov x3, 10   
+		mov x4, 40  
+		bl rectangle
+
+	       //linea 7(de la derecha)
+
+		mov x1, 560 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 570 
+		mov x2, 230 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 580 
+		mov x2, 260 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 590 
+		mov x2, 290 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 600 
+		mov x2, 320 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 610 
+		mov x2, 350 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 620 
+		mov x2, 380 
+		mov x3, 10  
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 630 
+		mov x2, 410 
+		mov x3, 10   
+		mov x4, 35  
+		bl rectangle
+
+		mov x1, 640 
+		mov x2, 440 
+		mov x3, 10   
+		mov x4, 38  
+		bl rectangle
+
+		//linea 8(de la derecha)
+		
+		mov x1, 600 
+		mov x2, 200 
+		mov x3, 10  
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 610 
+		mov x2, 225 
+		mov x3, 10  
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 620 
+		mov x2, 250 
+		mov x3, 10   
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 630 
+		mov x2, 275 
+		mov x3, 10   
+		mov x4, 30  
+		bl rectangle
+
+		mov x1, 640 
+		mov x2, 300 
+		mov x3, 10  
+		mov x4, 30  
+		bl rectangle
+
+
+		
 
 	// Estela
 		mov x1, 0
@@ -620,6 +1263,7 @@ main:
 
 	//---------------------------------------------------------------
 	// Infinite Loop
+
 
 InfLoop:
 	b InfLoop
