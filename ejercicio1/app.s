@@ -11,7 +11,24 @@ main:
 	movk x10, 0x0000, lsl 00
 	bl backgroundColor
 
-	// Fondo
+	.macro draw_rectangle x, y, w, h, color
+	  mov x1, \x
+	  mov x2, \y
+	  mov x3, \w
+	  mov x4, \h
+	  movz x10, (\color >> 16) & 0xFFFF, lsl 16
+	  movk x10, \color & 0xFFFF, lsl 0
+	  bl rectangle
+       .endm
+       
+       .set COLOR_HOVER, 0x3E686F
+       .set COLOR_FLOOR, 0x04263C
+       .set RED,  0xFF0000
+       .set BLACK, 0x000000
+       .set WHITE, 0xFFFFFF
+	
+ 
+                    // Fondo
 
 			mov x1, 100 // coord x
 			mov x2, 170 // coord y
@@ -150,572 +167,181 @@ main:
 		movk x10, 0x686f,lsl 00
 		bl rectangle 
        //Lineas
-                //linea1 (del centro)
-		mov x1, 320 // coord x
-		mov x2, 200 // coord y
-		mov x3, 10   // ancho
-		mov x4, 280  // alto
-		bl rectangle 
+                 
+        //Lineas horizontales
+	        draw_rectangle 0,200,640,5,COLOR_HOVER
+		draw_rectangle 0,220,640,3,COLOR_HOVER
+		draw_rectangle 0,250,640,4,COLOR_HOVER
+		draw_rectangle 0,290,640,5,COLOR_HOVER
+                draw_rectangle 0,350,640,6,COLOR_HOVER
+		draw_rectangle 0,420,640,7,COLOR_HOVER
 
-		//linea2
-		mov x1, 280 // coord x
-		mov x2, 200 // coord y
-		mov x3, 10   // ancho
-		mov x4, 70  // alto
-		bl rectangle 
+                 //linea1 (del centro)
+		   
+		draw_rectangle 318,200,4,93,COLOR_HOVER
+		draw_rectangle 317,293,6,93,COLOR_HOVER
+                draw_rectangle 316,386,8,94,COLOR_HOVER
 
-		mov x1, 270 // coord x
-		mov x2, 270 // coord y
-		mov x3, 10   // ancho
-		mov x4, 70  // alto
-		bl rectangle 
+                //linea2
+		draw_rectangle 248, 200, 4, 12, COLOR_HOVER
+                draw_rectangle 244, 212, 4, 12, COLOR_HOVER
+                draw_rectangle 240, 224, 4, 12, COLOR_HOVER
+                draw_rectangle 236, 236, 4, 12, COLOR_HOVER
+                draw_rectangle 232, 248, 4, 12, COLOR_HOVER
+                draw_rectangle 228, 260, 4, 12, COLOR_HOVER
+                draw_rectangle 224, 272, 4, 12, COLOR_HOVER
+                draw_rectangle 220, 284, 4, 12, COLOR_HOVER
+                draw_rectangle 216, 296, 4, 12, COLOR_HOVER
+                draw_rectangle 210, 308, 6, 12, COLOR_HOVER
+                draw_rectangle 204, 320, 6, 12, COLOR_HOVER
+                draw_rectangle 198, 332, 6, 12, COLOR_HOVER
+                draw_rectangle 192, 344, 6, 12, COLOR_HOVER
+                draw_rectangle 186, 356, 6, 12, COLOR_HOVER
+                draw_rectangle 180, 368, 6, 12, COLOR_HOVER
+                draw_rectangle 174, 380, 6, 12, COLOR_HOVER
+                draw_rectangle 168, 392, 6, 12, COLOR_HOVER
+                draw_rectangle 162, 404, 6, 12, COLOR_HOVER
+                draw_rectangle 154, 416, 8, 12, COLOR_HOVER
+                draw_rectangle 146, 428, 8, 12, COLOR_HOVER
+                draw_rectangle 138, 440, 8, 12, COLOR_HOVER
+                draw_rectangle 130, 452, 8, 12, COLOR_HOVER
+                draw_rectangle 122, 464, 8, 12, COLOR_HOVER
 
-		mov x1, 260 // coord x
-		mov x2, 340 // coord y
-		mov x3, 10   // ancho
-		mov x4, 70  // alto
-		bl rectangle 
+		 //linea 3
+		draw_rectangle 178, 200, 4, 6, COLOR_HOVER
+                draw_rectangle 174, 206, 4, 6, COLOR_HOVER
+                draw_rectangle 170, 212, 4, 6, COLOR_HOVER
+                draw_rectangle 166, 218, 4, 6, COLOR_HOVER
+                draw_rectangle 162, 224, 4, 6, COLOR_HOVER
+                draw_rectangle 158, 230, 5, 6, COLOR_HOVER
+                draw_rectangle 153, 236, 5, 6, COLOR_HOVER
+                draw_rectangle 148, 242, 5, 6, COLOR_HOVER
+                draw_rectangle 143, 248, 5, 6, COLOR_HOVER
+                draw_rectangle 138, 254, 5, 6, COLOR_HOVER
+                draw_rectangle 133, 260, 5, 6, COLOR_HOVER
+                draw_rectangle 128, 266, 5, 6, COLOR_HOVER
+                draw_rectangle 123, 272, 5, 6, COLOR_HOVER
+                draw_rectangle 118, 278, 6, 7, COLOR_HOVER
+                draw_rectangle 112, 285, 6, 7, COLOR_HOVER
+                draw_rectangle 106, 292, 6, 7, COLOR_HOVER
+                draw_rectangle 100, 299, 6, 7, COLOR_HOVER
+                draw_rectangle 94, 306, 6, 7, COLOR_HOVER
+                draw_rectangle 88, 313, 6, 7, COLOR_HOVER
+                draw_rectangle 82, 320, 6, 7, COLOR_HOVER
+                draw_rectangle 76, 327, 6, 7, COLOR_HOVER
+                draw_rectangle 70, 334, 6, 7, COLOR_HOVER
+                draw_rectangle 64, 341, 6, 7, COLOR_HOVER
+                draw_rectangle 57, 348, 6, 7, COLOR_HOVER
+                draw_rectangle 51, 355, 6, 7, COLOR_HOVER
+                draw_rectangle 45, 362, 6, 7, COLOR_HOVER
+                draw_rectangle 39, 369, 6, 7, COLOR_HOVER
+                draw_rectangle 33, 376, 9, 10, COLOR_HOVER
+                draw_rectangle 24, 386, 9, 10, COLOR_HOVER
+                draw_rectangle 15, 396, 9, 10, COLOR_HOVER
+                draw_rectangle 6, 406, 9, 10, COLOR_HOVER
+                draw_rectangle 0, 416, 9, 10, COLOR_HOVER
+   
+		 //linea 4
+		   
+                draw_rectangle 100, 200, 5, 6, COLOR_HOVER
+                draw_rectangle 95, 206, 5, 6, COLOR_HOVER
+                draw_rectangle 90, 212, 5, 4, COLOR_HOVER
+                draw_rectangle 85, 216, 5, 6, COLOR_HOVER
+                draw_rectangle 80, 222, 5, 4, COLOR_HOVER
+                draw_rectangle 75, 226, 5, 6, COLOR_HOVER
+                draw_rectangle 70, 232, 5, 4, COLOR_HOVER
+                draw_rectangle 65, 236, 5, 6, COLOR_HOVER
+                draw_rectangle 60, 242, 5, 4, COLOR_HOVER
+                draw_rectangle 55, 246, 5, 6, COLOR_HOVER
+                draw_rectangle 50, 252, 5, 4, COLOR_HOVER
+                draw_rectangle 45, 256, 5, 6, COLOR_HOVER
+                draw_rectangle 40, 262, 5, 4, COLOR_HOVER
+                draw_rectangle 35, 266, 5, 4, COLOR_HOVER
+                draw_rectangle 30, 270, 7, 6, COLOR_HOVER
+                draw_rectangle 23, 276, 8, 7, COLOR_HOVER
+                draw_rectangle 16, 283, 8, 6, COLOR_HOVER
+                draw_rectangle 8, 289, 8, 7, COLOR_HOVER
+                draw_rectangle 0, 296, 8, 7, COLOR_HOVER
 
-		mov x1, 250 // coord x
-		mov x2, 410 // coord y
-		mov x3, 10   // ancho
-		mov x4, 70  // alto
-		bl rectangle 
+                //Linea 2 (de la derecha)
+	       
+                draw_rectangle 388, 200, 4, 12, COLOR_HOVER
+                draw_rectangle 392, 212, 4, 12, COLOR_HOVER
+                draw_rectangle 396, 224, 4, 12, COLOR_HOVER
+                draw_rectangle 400, 236, 4, 12, COLOR_HOVER
+                draw_rectangle 404, 248, 4, 12, COLOR_HOVER
+                draw_rectangle 408, 260, 4, 12, COLOR_HOVER
+                draw_rectangle 412, 272, 4, 12, COLOR_HOVER
+                draw_rectangle 416, 284, 4, 12, COLOR_HOVER
+                draw_rectangle 420, 296, 4, 12, COLOR_HOVER
+                draw_rectangle 424, 308, 6, 12, COLOR_HOVER
+                draw_rectangle 430, 320, 6, 12, COLOR_HOVER
+                draw_rectangle 436, 332, 6, 12, COLOR_HOVER
+                draw_rectangle 442, 344, 6, 12, COLOR_HOVER
+                draw_rectangle 448, 356, 6, 12, COLOR_HOVER
+                draw_rectangle 454, 368, 6, 12, COLOR_HOVER
+                draw_rectangle 460, 380, 6, 12, COLOR_HOVER
+                draw_rectangle 466, 392, 6, 12, COLOR_HOVER
+                draw_rectangle 472, 404, 6, 12, COLOR_HOVER
+                draw_rectangle 478, 416, 8, 12, COLOR_HOVER
+                draw_rectangle 486, 428, 8, 12, COLOR_HOVER
+                draw_rectangle 494, 440, 8, 12, COLOR_HOVER
+                draw_rectangle 502, 452, 8, 12, COLOR_HOVER
+                draw_rectangle 510, 464, 8, 12, COLOR_HOVER
 
-                //linea 3
-
-		mov x1, 240 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 65  
-		bl rectangle 
-
-		mov x1, 230 
-		mov x2, 260 
-		mov x3, 10   
-		mov x4, 65  
-		bl rectangle 
-
-		mov x1, 220 
-		mov x2, 325 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle 
-
-		mov x1, 210 
-		mov x2, 390 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle 
-
-		mov x1, 200 
-		mov x2, 455 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle 
-
-		//linea 4
-
-		mov x1, 200 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle 
-
-		mov x1, 190 
-		mov x2, 245 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle 
-
-		mov x1, 180 
-		mov x2, 295 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle 
-
-
-		mov x1, 170 
-		mov x2, 345 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-		mov x1, 160 
-		mov x2, 390 
-		mov x3, 10   
-		mov x4, 50  
-		bl rectangle
-
-		mov x1, 150 
-		mov x2, 435 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-		//linea 5
-
-		mov x1, 160 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
- 
-                mov x1, 150 
-		mov x2, 240 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 140 
-		mov x2, 280 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 130 
-		mov x2, 320 
-		mov x3, 10   
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 120 
-		mov x2, 355 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 110 
-		mov x2, 395 
-		mov x3, 10   
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 100 
-		mov x2, 435 
-		mov x3, 10   
-		mov x4, 45  
-		bl rectangle
-
-		//linea 6
-
-		mov x1, 120 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 110 
-		mov x2, 235 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 100 
-		mov x2, 270 
-		mov x3, 10   
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 90 
-		mov x2, 315 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 80 
-		mov x2, 355 
-		mov x3, 10   
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 70 
-		mov x2, 390
-		mov x3, 10 
-		mov x4, 40 
-		bl rectangle
-
-		mov x1, 60 
-		mov x2, 425
-		mov x3, 10 
-		mov x4, 40 
-		bl rectangle
-
-		mov x1, 50 
-		mov x2, 460 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		//linea 7
-
-		mov x1, 80 
-		mov x2, 200 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 70 
-		mov x2, 230 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 60 
-		mov x2, 260 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 50 
-		mov x2, 290 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 40 
-		mov x2, 320
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 30 
-		mov x2, 350 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 20 
-		mov x2, 380 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 10 
-		mov x2, 410 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 0 
-		mov x2, 440 
-		mov x3, 10   
-		mov x4, 38  
-		bl rectangle
-
-		//linea 8
+                //linea 3 (de la derecha)
+	        draw_rectangle 458, 200, 4, 6,COLOR_HOVER
+                draw_rectangle 462, 206, 4, 6,COLOR_HOVER
+		draw_rectangle 466, 212, 4, 6,COLOR_HOVER
+                draw_rectangle 470, 218, 4, 6,COLOR_HOVER
+                draw_rectangle 474, 224, 4, 6,COLOR_HOVER
+                draw_rectangle 478, 230, 5, 6,COLOR_HOVER
+                draw_rectangle 483, 236, 5, 6,COLOR_HOVER
+                draw_rectangle 488, 242, 5, 6,COLOR_HOVER
+                draw_rectangle 493, 248, 5, 6,COLOR_HOVER
+                draw_rectangle 498, 254, 5, 6,COLOR_HOVER
+                draw_rectangle 503, 260, 5, 6,COLOR_HOVER
+                draw_rectangle 508, 266, 5, 6,COLOR_HOVER
+                draw_rectangle 513, 272, 5, 6,COLOR_HOVER
+                draw_rectangle 518, 278, 6, 7,COLOR_HOVER
+                draw_rectangle 524, 285, 6, 7,COLOR_HOVER
+                draw_rectangle 530, 292, 6, 7,COLOR_HOVER
+                draw_rectangle 536, 299, 6, 7,COLOR_HOVER
+                draw_rectangle 542, 306, 6, 7,COLOR_HOVER
+                draw_rectangle 548, 313, 6, 7,COLOR_HOVER
+                draw_rectangle 554, 320, 6, 7,COLOR_HOVER
+                draw_rectangle 560, 327, 6, 7,COLOR_HOVER
+                draw_rectangle 566, 334, 6, 7,COLOR_HOVER
+                draw_rectangle 572, 341, 6, 7,COLOR_HOVER
+                draw_rectangle 578, 348, 6, 7,COLOR_HOVER
+                draw_rectangle 584, 355, 6, 7,COLOR_HOVER
+                draw_rectangle 590, 362, 6, 7,COLOR_HOVER
+                draw_rectangle 596, 369, 6, 7,COLOR_HOVER
+                draw_rectangle 602, 376, 9, 10,COLOR_HOVER
+                draw_rectangle 611, 386, 9, 10,COLOR_HOVER
+                draw_rectangle 620, 396, 9, 10,COLOR_HOVER
+                draw_rectangle 629, 406, 9, 10,COLOR_HOVER
+                draw_rectangle 638, 416, 9, 10,COLOR_HOVER
 		
-		mov x1, 40 
-		mov x2, 200 
-		mov x3, 10   
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 30 
-		mov x2, 225 
-		mov x3, 10   
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 20 
-		mov x2, 250 
-		mov x3, 10   
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 10 
-		mov x2, 275 
-		mov x3, 10   
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 0 
-		mov x2, 300
-		mov x3, 10  
-		mov x4, 30  
-		bl rectangle
-
-        //linea 2 (de la derecha)
-		mov x1, 360 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle 
-
-		mov x1, 370 
-		mov x2, 270 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle 
-
-		mov x1, 380 
-		mov x2, 340 
-		mov x3, 10   
-		mov x4, 70  
-		bl rectangle 
-
-		mov x1, 390 
-		mov x2, 410 
-		mov x3, 10   
-		mov x4, 70  
-		bl rectangle 
-
-		mov x1, 400 
-		mov x2, 480 
-		mov x3, 10   
-		mov x4, 70  
-		bl rectangle 
-
-		//linea 3 (de la derecha)
-		mov x1, 400 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 65  
-		bl rectangle
-
-		mov x1, 410 
-		mov x2, 260 
-		mov x3, 10  
-		mov x4, 65  
-		bl rectangle  
-
-
-		mov x1, 420 
-		mov x2, 325 
-		mov x3, 10   
-		mov x4, 70  
-		bl rectangle
-
-                mov x1, 430 
-		mov x2, 390 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle
-
-		mov x1, 440 
-		mov x2, 455 
-		mov x3, 10  
-		mov x4, 70  
-		bl rectangle
-
-		//linea 4 (de la derecha)
-                mov x1, 440 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-                mov x1, 450 
-		mov x2, 245 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-		mov x1, 460 
-		mov x2, 295 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-                mov x1, 470 
-		mov x2, 345 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-                mov x1, 480 
-		mov x2, 390 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-	        mov x1, 490 
-		mov x2, 435 
-		mov x3, 10  
-		mov x4, 50  
-		bl rectangle
-
-	    //linea 5(de la derecha)
-		mov x1, 480 
-		mov x2, 200 
-		mov x3, 10   
-		mov x4, 45  
-		bl rectangle
- 
-                mov x1, 490 
-		mov x2, 240 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 500 
-		mov x2, 280 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 510 
-		mov x2, 320 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 520 
-		mov x2, 355 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 530 
-		mov x2, 395 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-		mov x1, 540 
-		mov x2, 435 
-		mov x3, 10  
-		mov x4, 45  
-		bl rectangle
-
-        //linea 6(de la derecha)
-		mov x1, 520 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 530 
-		mov x2, 235 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 540 
-		mov x2, 270 
-		mov x3, 10  
-		mov x4, 43  
-		bl rectangle
-
-		mov x1, 550 
-		mov x2, 315 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 560 
-		mov x2, 355 
-		mov x3, 10   
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 570 
-		mov x2, 390 
-		mov x3, 10  
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 580 
-		mov x2, 425 
-		mov x3, 10   
-		mov x4, 40  
-		bl rectangle
-
-		mov x1, 590 
-		mov x2, 460 
-		mov x3, 10   
-		mov x4, 40  
-		bl rectangle
-
-	       //linea 7(de la derecha)
-
-		mov x1, 560 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 570 
-		mov x2, 230 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 580 
-		mov x2, 260 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 590 
-		mov x2, 290 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 600 
-		mov x2, 320 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 610 
-		mov x2, 350 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 620 
-		mov x2, 380 
-		mov x3, 10  
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 630 
-		mov x2, 410 
-		mov x3, 10   
-		mov x4, 35  
-		bl rectangle
-
-		mov x1, 640 
-		mov x2, 440 
-		mov x3, 10   
-		mov x4, 38  
-		bl rectangle
-
-		//linea 8(de la derecha)
-		
-		mov x1, 600 
-		mov x2, 200 
-		mov x3, 10  
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 610 
-		mov x2, 225 
-		mov x3, 10  
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 620 
-		mov x2, 250 
-		mov x3, 10   
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 630 
-		mov x2, 275 
-		mov x3, 10   
-		mov x4, 30  
-		bl rectangle
-
-		mov x1, 640 
-		mov x2, 300 
-		mov x3, 10  
-		mov x4, 30  
-		bl rectangle
-
-
+		//linea 4(de la derecha)
+	        draw_rectangle 540, 200, 5, 6,COLOR_HOVER
+                draw_rectangle 545, 206, 5, 6,COLOR_HOVER
+                draw_rectangle 550, 212, 5, 4,COLOR_HOVER
+                draw_rectangle 555, 216, 5, 6,COLOR_HOVER
+                draw_rectangle 560, 222, 5, 4,COLOR_HOVER
+                draw_rectangle 565, 226, 5, 6,COLOR_HOVER
+                draw_rectangle 570, 232, 5, 4,COLOR_HOVER
+                draw_rectangle 575, 236, 5, 6,COLOR_HOVER
+                draw_rectangle 580, 242, 5, 4,COLOR_HOVER
+                draw_rectangle 585, 246, 5, 6,COLOR_HOVER
+                draw_rectangle 590, 252, 5, 4,COLOR_HOVER
+                draw_rectangle 595, 256, 5, 6,COLOR_HOVER
+                draw_rectangle 600, 262, 5, 4,COLOR_HOVER
+                draw_rectangle 605, 266, 5, 4,COLOR_HOVER
+                draw_rectangle 610, 270, 7, 6,COLOR_HOVER
+                draw_rectangle 617, 276, 8, 7,COLOR_HOVER
+                draw_rectangle 625, 283, 8, 6,COLOR_HOVER
+                draw_rectangle 633, 289, 8, 7,COLOR_HOVER
 		
 
 	// Estela
@@ -1265,6 +891,9 @@ main:
 	// Infinite Loop
 
 
+
 InfLoop:
 	b InfLoop
+
+ 
  
