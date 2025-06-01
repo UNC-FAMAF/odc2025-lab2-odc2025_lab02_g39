@@ -389,11 +389,7 @@ draw_rectangle 351, 266, 6, 3, RED3
 draw_rectangle 345, 263, 7, 3, RED3
 
 
-
 	//---------------------------------------------------------------
 	// Infinite Loop
-InfLoop:
-	b InfLoop
-	// Fin del programa
 InfLoop:
 	b InfLoop
