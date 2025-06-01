@@ -299,10 +299,10 @@ draw_rectangle 310, 345, 25, 2, RED
 draw_rectangle 335, 343, 20, 2, RED
 draw_rectangle 355, 341, 10, 2, RED
 draw_rectangle 365, 339, 3, 2, RED
-draw_rectangle 368, 325, 2, 14, RED
-draw_rectangle 370, 323, 6, 2, RED
-draw_rectangle 376, 321, 10, 2, RED
-draw_rectangle 386, 319, 6, 2, RED
+draw_rectangle 368, 326, 2, 13, RED
+//draw_rectangle 370, 323, 6, 2, RED
+//draw_rectangle 376, 321, 10, 2, RED
+//draw_rectangle 386, 319, 6, 2, RED
 draw_rectangle 392, 311, 2, 8, RED
 draw_rectangle 394, 309, 5, 2, RED
 draw_rectangle 397, 306, 2, 3, RED
@@ -327,43 +327,41 @@ draw_circumference 310, 345, 3, 1, RED
 	draw_rectangle 346, 306, 4, 6, BLACK
 
 	// Contorno Torso
-	draw_rectangle 315, 287, 17, 4, RED2
-	draw_rectangle 303, 291, 11, 4, RED
-	draw_rectangle 292, 295, 11, 4, RED3
-	draw_rectangle 288, 300, 4, 7, RED2
-	draw_rectangle 284, 307, 4, 4, RED
+	draw_rectangle 315, 283, 17, 4, RED2
+	draw_rectangle 303, 287, 11, 4, RED
+	draw_rectangle 292, 291, 11, 4, RED3
+	draw_rectangle 288, 296, 4, 7, RED2
+	draw_rectangle 284, 303, 4, 4, RED
 
 	// Pierna
-	draw_rectangle 312, 319, 4, 8, RED3
-	draw_rectangle 292, 337, 4, 4, RED3
-	draw_rectangle 295, 330, 4, 9, RED2
-	draw_rectangle 299, 328, 6, 4, RED3
-	draw_rectangle 304, 324, 10, 4, RED
-	draw_rectangle 272, 341, 20, 4, RED3
-	draw_rectangle 269, 343, 4, 4, RED3
-	draw_rectangle 267, 345, 4, 4, RED2
-	draw_rectangle 260, 349, 9, 4, RED
-	draw_rectangle 255, 337, 4, 11, RED3
-	draw_rectangle 259, 333, 10, 4, RED2
-	draw_rectangle 269, 329, 4, 4, RED2
-	draw_rectangle 273, 327, 4, 4, RED2
+	draw_rectangle 294, 315, 4, 8, RED3
+	draw_rectangle 274, 332, 4, 4, RED3
+	draw_rectangle 277, 326, 4, 9, RED2
+	draw_rectangle 281, 324, 6, 4, RED3
+	draw_rectangle 286, 320, 10, 4, RED
+	draw_rectangle 254, 337, 20, 4, RED3
+	draw_rectangle 251, 339, 4, 4, RED3
+	draw_rectangle 249, 341, 4, 4, RED2
+	draw_rectangle 242, 345, 9, 4, RED3
+	draw_rectangle 237, 333, 4, 11, RED3
+	draw_rectangle 241, 329, 10, 4, RED2
+	draw_rectangle 251, 325, 4, 4, RED2
+	draw_rectangle 255, 323, 4, 4, RED2
+	draw_rectangle 241, 332, 10, 13, BLACK
 	
 	// Brazo
-	draw_rectangle 372, 319, 14, 8, BLACK
-	draw_rectangle 368, 323, 4, 4, BLACK
+	draw_rectangle 384, 318, 22, 12, BLACK
 	draw_rectangle 340, 319, 8, 4, RED3
 	draw_rectangle 348, 322, 8, 4, RED2
 	draw_rectangle 356, 325, 8, 4, RED
-	draw_rectangle 364, 326, 8, 4, RED3
-	draw_rectangle 372, 327, 8, 4, RED
+	draw_rectangle 364, 326, 31, 4, RED3
 	draw_rectangle 336, 311, 4, 7, RED2
-	draw_rectangle 380, 328, 8, 4, RED
-	draw_rectangle 386, 318, 4, 10, RED
-	draw_rectangle 379, 314, 7, 4, RED
-	draw_rectangle 379, 314, 7, 4, RED
-	draw_rectangle 375, 317, 4, 4, RED
-	draw_rectangle 371, 316, 4, 4, RED
-	draw_rectangle 367, 314, 4, 4, RED
+	draw_rectangle 395, 327, 9, 4, RED3
+	draw_rectangle 405, 318, 4, 10, RED3
+	draw_rectangle 396, 315, 10, 4, RED3
+	draw_rectangle 380, 317, 16, 4, RED3
+	draw_rectangle 376, 316, 4, 4, RED
+	draw_rectangle 372, 314, 4, 4, RED2
 
 // Cabeza del conductor
 draw_rectangle 346, 303, 27, 4, RED
@@ -411,12 +409,9 @@ draw_rectangle 345, 263, 7, 3, RED3
 	lsr w11, w11, 1
 
 	//---------------------------------------------------------------
+	
+	
 	// Infinite Loop
-
-
-
 InfLoop:
 	b InfLoop
-
- 
- 
+	// Fin del programa
