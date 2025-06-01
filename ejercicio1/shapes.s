@@ -77,55 +77,6 @@ rectangle:
         add sp, sp, 40  
 ret
 
-circle:
-    // Dibuja un círculo completo con color x10
-    // Centro X:x1, Centro Y:x2, Radio:x3, Color:x10
-    sub sp, sp, 40
-    stur x1, [sp, 0]
-    stur x2, [sp, 8]
-    stur x3, [sp, 16]
-    stur lr, [sp, 32]
-
-            
-        sub x4, xzr, x3     // x4 = -radio (offset en X)
-    loop_circ_y:
-        sub x5, xzr, x3     // x5 = -radio (offset en Y)
-    loop_circ_x:
-        // x6 = x4^2 + x5^2
-        mul x6, x4, x4
-        mul x7, x5, x5
-        add x6, x6, x7
-
-        // x7 = radio^2
-        ldur x7, [sp, 16]
-        mul x7, x7, x7
-
-        cmp x6, x7
-        bgt no_pixel       // Si está fuera del radio, no pinta
-
-        // Pinta el pixel: setpixel(x1+x4, x2+x5)
-        add x1, x4, x1
-        add x2, x5, x2
-        bl setpixel
-        ldur x1, [sp, 0]
-        ldur x2, [sp, 8]
-
-    no_pixel:
-        add x5, x5, 1
-        cmp x5, x3
-        ble loop_circ_x
-
-        add x4, x4, 1
-        cmp x4, x3
-        ble loop_circ_y
-
-    ldur x1, [sp, 0]
-    ldur x2, [sp, 8]
-    ldur x3, [sp, 16]
-    ldur lr, [sp, 32]
-    add sp, sp, 40
-ret
-
 circumference:
     // Dibuja solo el borde de un círculo con color x10
     // Centro X:x1, Centro Y:x2, Radio:x3, Espesor:x4, Color:x10
