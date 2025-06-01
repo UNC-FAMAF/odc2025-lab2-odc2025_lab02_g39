@@ -20,23 +20,23 @@ main:
 .equ BLACK, 0x000000
 .equ WHITE, 0xFFFFFF
 
-.macro draw_rectangle x, y, w, h, color
-	mov x1, \x
-	mov x2, \y
-	mov x3, \w
-	mov x4, \h
-	movz x10, (\color >> 16) & 0xFFFF, lsl 16
-	movk x10, \color & 0xFFFF, lsl 0
+.macro draw_rectangle x, y, w, z, color
+	mov x1, \x  // Mueve el valor   
+	mov x2, \y  // de x, y, w, z
+	mov x3, \w  // que se le pasa al macro
+	mov x4, \z  // al registro x1
+	movz x10, (\color >> 16) & 0xFFFF, lsl 16 // Carga bits mas significativos del color en x10
+	movk x10, \color & 0xFFFF, lsl 0 // Carga bits menos significativos del color en x10
 	bl rectangle
 .endm
 
-.macro draw_circumference x, y, r, t, color
-	mov x1, \x
-	mov x2, \y
-	mov x3, \r
-	mov x4, \t
-	movz x10, (\color >> 16) & 0xFFFF, lsl 16
-	movk x10, \color & 0xFFFF, lsl 0
+.macro draw_circumference x, y, w, z, color
+	mov x1, \x  // Mueve el valor
+	mov x2, \y  // de x, y, w, z
+	mov x3, \w  // que se le pasa al macro
+	mov x4, \z  // al registro x1
+	movz x10, (\color >> 16) & 0xFFFF, lsl 16 // Carga bits mas significativos del color en x10
+	movk x10, \color & 0xFFFF, lsl 0 // Carga bits menos significativos del color en x10
 	bl circumference
 .endm
 
