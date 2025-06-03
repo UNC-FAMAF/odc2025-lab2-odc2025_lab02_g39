@@ -40,9 +40,114 @@ main:
 	bl circumference
 .endm
 
+// Fondo
+		// Color de Fondo
+			movz x10, 0x00, lsl 16
+			movk x10, 0x0000, lsl 0 
+			bl backgroundColor
+
+		// Detalles del Fondo
+
+			// Main Build	
+				// Left Side
+                                        draw_rectangle 305, 90, 5, 120, 0x328da4
+					draw_rectangle 300, 60, 5, 170, 0x328da4
+					draw_rectangle 295, 65, 5, 165, 0x328da4
+					draw_rectangle 290, 70, 5, 160, 0x328da4
+					draw_rectangle 285, 100, 5, 130, 0x328da4
+					draw_rectangle 280, 105, 5, 135, 0x328da4
+					draw_rectangle 275, 110, 5, 140, 0x328da4
+					draw_rectangle 270, 160, 5, 90, 0x328da4
+					draw_rectangle 265, 165, 5, 85, 0x328da4
+					draw_rectangle 260, 170, 5, 80, 0x328da4
+
+				// Right Side
+                                        draw_rectangle 325, 90, 5, 120, 0x328da4
+					draw_rectangle 330, 60, 5, 170, 0x328da4
+					draw_rectangle 335, 65, 5, 165, 0x328da4
+					draw_rectangle 340, 70, 5, 160, 0x328da4
+					draw_rectangle 345, 100, 5, 130, 0x328da4
+					draw_rectangle 350, 105, 5, 135, 0x328da4
+					draw_rectangle 355, 110, 5, 140, 0x328da4
+					draw_rectangle 360, 160, 5, 90, 0x328da4
+					draw_rectangle 365, 165, 5, 85, 0x328da4
+					draw_rectangle 370, 170, 5, 80, 0x328da4
+
+			// First Group (Left)
+				draw_rectangle 100, 170, 5, 30, 0x328da4
+
+			
+			// edificio1 der
+				draw_rectangle 0, 190, 5, 70, 0x328da4
+				draw_rectangle 5, 180, 5, 70, 0x328da4
+				draw_rectangle 10, 185, 5, 70, 0x328da4
+				draw_rectangle 15, 176, 5, 70, 0x328da4
+				draw_rectangle 20, 180, 5, 70, 0x328da4
+				draw_rectangle 25, 183, 5, 70, 0x328da4
+				draw_rectangle 30, 177, 5, 70, 0x328da4
+				draw_rectangle 35, 188, 5, 70, 0x328da4
+
+			// edificio2 der
+				draw_rectangle 70, 188, 5, 70, 0x328da4
+				draw_rectangle 75, 177, 5, 70, 0x328da4
+				draw_rectangle 80, 183, 5, 70, 0x328da4
+				draw_rectangle 85, 180, 5, 70, 0x328da4
+				draw_rectangle 90, 176, 5, 70, 0x328da4
+				draw_rectangle 95, 185, 5, 70, 0x328da4
+				draw_rectangle 100, 180, 5, 70, 0x328da4
+				draw_rectangle 105, 190, 5, 70, 0x328da4
+
+			// edificio3 der
+				draw_rectangle 170, 190, 5, 70, 0x328da4
+				draw_rectangle 175, 187, 5, 70, 0x328da4
+				draw_rectangle 180, 181, 5, 70, 0x328da4
+				draw_rectangle 185, 183, 5, 70, 0x328da4
+				draw_rectangle 190, 177, 5, 70, 0x328da4
+				draw_rectangle 195, 190, 5, 70, 0x328da4
+				draw_rectangle 200, 176, 5, 70, 0x328da4
+				draw_rectangle 205, 188, 5, 70, 0x328da4
+
+			
+
+			// edificio4 izq
+				draw_rectangle 400, 188, 5, 70, 0x328da4
+				draw_rectangle 405, 177, 5, 70, 0x328da4
+				draw_rectangle 410, 185, 5, 70, 0x328da4
+				draw_rectangle 415, 190, 5, 70, 0x328da4
+				draw_rectangle 420, 177, 5, 70, 0x328da4
+				draw_rectangle 425, 185, 5, 70, 0x328da4
+				draw_rectangle 430, 180, 5, 70, 0x328da4
+				draw_rectangle 435, 190, 5, 70, 0x328da4
+			
+			// edificio5 izq
+				draw_rectangle 500, 187, 5, 70, 0x328da4
+				draw_rectangle 505, 180, 5, 70, 0x328da4
+				draw_rectangle 510, 185, 5, 70, 0x328da4
+				draw_rectangle 515, 176, 5, 70, 0x328da4
+				draw_rectangle 520, 180, 5, 70, 0x328da4
+				draw_rectangle 525, 183, 5, 70, 0x328da4
+				draw_rectangle 530, 177, 5, 70, 0x328da4
+				draw_rectangle 535, 190, 5, 70, 0x328da4
+
+			// edificio6 izq
+				draw_rectangle 570, 188, 5, 70, 0x328da4
+				draw_rectangle 575, 177, 5, 70, 0x328da4
+				draw_rectangle 580, 183, 5, 70, 0x328da4
+				draw_rectangle 585, 180, 5, 70, 0x328da4
+				draw_rectangle 590, 176, 5, 70, 0x328da4
+				draw_rectangle 595, 185, 5, 70, 0x328da4
+				draw_rectangle 600, 180, 5, 70, 0x328da4
+				draw_rectangle 605, 190, 5, 70, 0x328da4
+
+
+
+
 
 // Piso
 draw_rectangle 0, 200, 640, 280, FLOOR
+
+
+
 
 // Lineas
                  
@@ -220,6 +325,9 @@ draw_rectangle 0, 200, 640, 280, FLOOR
 	draw_rectangle 625, 283, 8, 6,FLOORLINES
 	draw_rectangle 633, 289, 8, 7,FLOORLINES
 		
+		
+
+
 
 // Estela
 draw_rectangle 0, 307, 204, 67, RED
@@ -387,6 +495,10 @@ draw_rectangle 359, 272, 8, 3, RED3
 draw_rectangle 355, 269, 8, 3, RED3
 draw_rectangle 351, 266, 6, 3, RED3
 draw_rectangle 345, 263, 7, 3, RED3
+
+
+
+
 
 
 	//---------------------------------------------------------------
