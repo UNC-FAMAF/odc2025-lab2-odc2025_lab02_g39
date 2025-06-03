@@ -1,6 +1,7 @@
 Nombre y apellido 
 Integrante 1: Fabrizio Joaquin Simonian
-Integrante 2: Integrante 3: Integrante 4:
+Integrante 2:Trinidad Seleme Neild
+Integrante 3: Integrante 4:
 
 Descripción ejercicio 1:
 
