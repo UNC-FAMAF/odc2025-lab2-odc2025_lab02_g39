@@ -18,7 +18,9 @@ main:
 .equ RED2, 0xD80000
 .equ RED3, 0x990000
 .equ BLACK, 0x000000
-.equ WHITE, 0xFFFFFF
+.equ LBLACK, 0x1B1B1F
+.equ BORDO, 0x311724
+.equ EDIFICIO, 0x328da4
 
 .macro draw_rectangle x, y, w, z, color
 	mov x1, \x  // Mueve el valor   
@@ -50,94 +52,94 @@ main:
 
 			// Main Build	
 				// Left Side
-                                        draw_rectangle 305, 90, 5, 120, 0x328da4
-					draw_rectangle 300, 60, 5, 170, 0x328da4
-					draw_rectangle 295, 65, 5, 165, 0x328da4
-					draw_rectangle 290, 70, 5, 160, 0x328da4
-					draw_rectangle 285, 100, 5, 130, 0x328da4
-					draw_rectangle 280, 105, 5, 135, 0x328da4
-					draw_rectangle 275, 110, 5, 140, 0x328da4
-					draw_rectangle 270, 160, 5, 90, 0x328da4
-					draw_rectangle 265, 165, 5, 85, 0x328da4
-					draw_rectangle 260, 170, 5, 80, 0x328da4
+                    draw_rectangle 305, 90, 5, 120, EDIFICIO
+					draw_rectangle 300, 60, 5, 170, EDIFICIO
+					draw_rectangle 295, 65, 5, 165, EDIFICIO
+					draw_rectangle 290, 70, 5, 160, EDIFICIO
+					draw_rectangle 285, 100, 5, 130, EDIFICIO
+					draw_rectangle 280, 105, 5, 135, EDIFICIO
+					draw_rectangle 275, 110, 5, 140, EDIFICIO
+					draw_rectangle 270, 160, 5, 90, EDIFICIO
+					draw_rectangle 265, 165, 5, 85, EDIFICIO
+					draw_rectangle 260, 170, 5, 80, EDIFICIO
 
 				// Right Side
-                                        draw_rectangle 325, 90, 5, 120, 0x328da4
-					draw_rectangle 330, 60, 5, 170, 0x328da4
-					draw_rectangle 335, 65, 5, 165, 0x328da4
-					draw_rectangle 340, 70, 5, 160, 0x328da4
-					draw_rectangle 345, 100, 5, 130, 0x328da4
-					draw_rectangle 350, 105, 5, 135, 0x328da4
-					draw_rectangle 355, 110, 5, 140, 0x328da4
-					draw_rectangle 360, 160, 5, 90, 0x328da4
-					draw_rectangle 365, 165, 5, 85, 0x328da4
-					draw_rectangle 370, 170, 5, 80, 0x328da4
+                    draw_rectangle 325, 90, 5, 120, EDIFICIO
+					draw_rectangle 330, 60, 5, 170, EDIFICIO
+					draw_rectangle 335, 65, 5, 165, EDIFICIO
+					draw_rectangle 340, 70, 5, 160, EDIFICIO
+					draw_rectangle 345, 100, 5, 130, EDIFICIO
+					draw_rectangle 350, 105, 5, 135, EDIFICIO
+					draw_rectangle 355, 110, 5, 140, EDIFICIO
+					draw_rectangle 360, 160, 5, 90, EDIFICIO
+					draw_rectangle 365, 165, 5, 85, EDIFICIO
+					draw_rectangle 370, 170, 5, 80, EDIFICIO
 
 			// First Group (Left)
-				draw_rectangle 100, 170, 5, 30, 0x328da4
+				draw_rectangle 100, 170, 5, 30, EDIFICIO
 
 			
 			// edificio1 der
-				draw_rectangle 0, 190, 5, 70, 0x328da4
-				draw_rectangle 5, 180, 5, 70, 0x328da4
-				draw_rectangle 10, 185, 5, 70, 0x328da4
-				draw_rectangle 15, 176, 5, 70, 0x328da4
-				draw_rectangle 20, 180, 5, 70, 0x328da4
-				draw_rectangle 25, 183, 5, 70, 0x328da4
-				draw_rectangle 30, 177, 5, 70, 0x328da4
-				draw_rectangle 35, 188, 5, 70, 0x328da4
+				draw_rectangle 0, 190, 5, 70, EDIFICIO
+				draw_rectangle 5, 180, 5, 70, EDIFICIO
+				draw_rectangle 10, 185, 5, 70, EDIFICIO
+				draw_rectangle 15, 176, 5, 70, EDIFICIO
+				draw_rectangle 20, 180, 5, 70, EDIFICIO
+				draw_rectangle 25, 183, 5, 70, EDIFICIO
+				draw_rectangle 30, 177, 5, 70, EDIFICIO
+				draw_rectangle 35, 188, 5, 70, EDIFICIO
 
 			// edificio2 der
-				draw_rectangle 70, 188, 5, 70, 0x328da4
-				draw_rectangle 75, 177, 5, 70, 0x328da4
-				draw_rectangle 80, 183, 5, 70, 0x328da4
-				draw_rectangle 85, 180, 5, 70, 0x328da4
-				draw_rectangle 90, 176, 5, 70, 0x328da4
-				draw_rectangle 95, 185, 5, 70, 0x328da4
-				draw_rectangle 100, 180, 5, 70, 0x328da4
-				draw_rectangle 105, 190, 5, 70, 0x328da4
+				draw_rectangle 70, 188, 5, 70, EDIFICIO
+				draw_rectangle 75, 177, 5, 70, EDIFICIO
+				draw_rectangle 80, 183, 5, 70, EDIFICIO
+				draw_rectangle 85, 180, 5, 70, EDIFICIO
+				draw_rectangle 90, 176, 5, 70, EDIFICIO
+				draw_rectangle 95, 185, 5, 70, EDIFICIO
+				draw_rectangle 100, 180, 5, 70, EDIFICIO
+				draw_rectangle 105, 190, 5, 70, EDIFICIO
 
 			// edificio3 der
-				draw_rectangle 170, 190, 5, 70, 0x328da4
-				draw_rectangle 175, 187, 5, 70, 0x328da4
-				draw_rectangle 180, 181, 5, 70, 0x328da4
-				draw_rectangle 185, 183, 5, 70, 0x328da4
-				draw_rectangle 190, 177, 5, 70, 0x328da4
-				draw_rectangle 195, 190, 5, 70, 0x328da4
-				draw_rectangle 200, 176, 5, 70, 0x328da4
-				draw_rectangle 205, 188, 5, 70, 0x328da4
+				draw_rectangle 170, 190, 5, 70, EDIFICIO
+				draw_rectangle 175, 187, 5, 70, EDIFICIO
+				draw_rectangle 180, 181, 5, 70, EDIFICIO
+				draw_rectangle 185, 183, 5, 70, EDIFICIO
+				draw_rectangle 190, 177, 5, 70, EDIFICIO
+				draw_rectangle 195, 190, 5, 70, EDIFICIO
+				draw_rectangle 200, 176, 5, 70, EDIFICIO
+				draw_rectangle 205, 188, 5, 70, EDIFICIO
 
 			
 
 			// edificio4 izq
-				draw_rectangle 400, 188, 5, 70, 0x328da4
-				draw_rectangle 405, 177, 5, 70, 0x328da4
-				draw_rectangle 410, 185, 5, 70, 0x328da4
-				draw_rectangle 415, 190, 5, 70, 0x328da4
-				draw_rectangle 420, 177, 5, 70, 0x328da4
-				draw_rectangle 425, 185, 5, 70, 0x328da4
-				draw_rectangle 430, 180, 5, 70, 0x328da4
-				draw_rectangle 435, 190, 5, 70, 0x328da4
+				draw_rectangle 400, 188, 5, 70, EDIFICIO
+				draw_rectangle 405, 177, 5, 70, EDIFICIO
+				draw_rectangle 410, 185, 5, 70, EDIFICIO
+				draw_rectangle 415, 190, 5, 70, EDIFICIO
+				draw_rectangle 420, 177, 5, 70, EDIFICIO
+				draw_rectangle 425, 185, 5, 70, EDIFICIO
+				draw_rectangle 430, 180, 5, 70, EDIFICIO
+				draw_rectangle 435, 190, 5, 70, EDIFICIO
 			
 			// edificio5 izq
-				draw_rectangle 500, 187, 5, 70, 0x328da4
-				draw_rectangle 505, 180, 5, 70, 0x328da4
-				draw_rectangle 510, 185, 5, 70, 0x328da4
-				draw_rectangle 515, 176, 5, 70, 0x328da4
-				draw_rectangle 520, 180, 5, 70, 0x328da4
-				draw_rectangle 525, 183, 5, 70, 0x328da4
-				draw_rectangle 530, 177, 5, 70, 0x328da4
-				draw_rectangle 535, 190, 5, 70, 0x328da4
+				draw_rectangle 500, 187, 5, 70, EDIFICIO
+				draw_rectangle 505, 180, 5, 70, EDIFICIO
+				draw_rectangle 510, 185, 5, 70, EDIFICIO
+				draw_rectangle 515, 176, 5, 70, EDIFICIO
+				draw_rectangle 520, 180, 5, 70, EDIFICIO
+				draw_rectangle 525, 183, 5, 70, EDIFICIO
+				draw_rectangle 530, 177, 5, 70, EDIFICIO
+				draw_rectangle 535, 190, 5, 70, EDIFICIO
 
 			// edificio6 izq
-				draw_rectangle 570, 188, 5, 70, 0x328da4
-				draw_rectangle 575, 177, 5, 70, 0x328da4
-				draw_rectangle 580, 183, 5, 70, 0x328da4
-				draw_rectangle 585, 180, 5, 70, 0x328da4
-				draw_rectangle 590, 176, 5, 70, 0x328da4
-				draw_rectangle 595, 185, 5, 70, 0x328da4
-				draw_rectangle 600, 180, 5, 70, 0x328da4
-				draw_rectangle 605, 190, 5, 70, 0x328da4
+				draw_rectangle 570, 188, 5, 70, EDIFICIO
+				draw_rectangle 575, 177, 5, 70, EDIFICIO
+				draw_rectangle 580, 183, 5, 70, EDIFICIO
+				draw_rectangle 585, 180, 5, 70, EDIFICIO
+				draw_rectangle 590, 176, 5, 70, EDIFICIO
+				draw_rectangle 595, 185, 5, 70, EDIFICIO
+				draw_rectangle 600, 180, 5, 70, EDIFICIO
+				draw_rectangle 605, 190, 5, 70, EDIFICIO
 
 
 
@@ -498,6 +500,46 @@ draw_rectangle 345, 263, 7, 3, RED3
 
 
 
+// Nave
+	// Parte Superior
+	draw_rectangle 422, 65, 88, 8, BORDO
+	draw_rectangle 421, 73, 90, 4, RED3
+	draw_rectangle 444, 61, 47, 4, BORDO
+	draw_rectangle 455, 57, 23, 4, BORDO
+	draw_rectangle 455, 65, 23, 4, RED
+	
+	
+	// Ala Derecha
+	draw_rectangle 507, 100, 7, 40, RED
+	draw_rectangle 506, 85, 7, 40, RED
+	draw_rectangle 505, 77, 7, 30, RED
+	draw_rectangle 504, 100, 7, 40, RED3
+	draw_rectangle 503, 85, 7, 40, RED3
+	draw_rectangle 502, 77, 7, 30, RED3
+	draw_rectangle 500, 100, 7, 40, BORDO
+	draw_rectangle 499, 85, 7, 40, BORDO
+	draw_rectangle 498, 77, 7, 30, BORDO
+	draw_rectangle 480, 137, 20, 3, BORDO
+	draw_rectangle 480, 133, 6, 6, BORDO
+	draw_rectangle 486, 127, 6, 12, BORDO
+	draw_rectangle 492, 121, 6, 18, BORDO
+	draw_rectangle 498, 115, 6, 24, BORDO
+	
+	// Ala Izquierda
+	draw_rectangle 418, 100, 7, 40, RED2
+	draw_rectangle 419, 85, 7, 40, RED2
+	draw_rectangle 420, 77, 7, 30, RED2
+	draw_rectangle 420, 100, 7, 40, RED3
+	draw_rectangle 421, 85, 7, 40, RED3
+	draw_rectangle 422, 77, 7, 30, RED3
+	draw_rectangle 423, 100, 7, 40, BORDO
+	draw_rectangle 424, 85, 7, 40, BORDO
+	draw_rectangle 425, 77, 7, 30, BORDO
+	draw_rectangle 430, 137, 20, 3, BORDO
+	draw_rectangle 444, 133, 6, 6, BORDO
+	draw_rectangle 438, 127, 6, 12, BORDO
+	draw_rectangle 432, 121, 6, 18, BORDO
+	draw_rectangle 426, 115, 6, 24, BORDO
 
 
 
