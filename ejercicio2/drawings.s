@@ -47,8 +47,8 @@ draw_fondo:
     str x30, [sp, #40]
     // Fondo
 	// Color de Fondo
-		movz x10, 0x00, lsl 16
-		movk x10, 0x0000, lsl 0 
+		movz x10, 0x09, lsl 16 
+		movk x10, 0x1017, lsl 0 
 		bl backgroundColor
     
     ldr x30, [sp, #40]
