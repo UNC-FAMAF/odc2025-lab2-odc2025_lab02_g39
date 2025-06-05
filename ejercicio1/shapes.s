@@ -1,9 +1,9 @@
 .ifndef __shapes__
 .equ __shapes__,0
 .include "size.s"
+.globl timer
 
 backgroundColor: 
-
     sub sp, sp, 24
     stur x1, [sp, 0]
     stur x2, [sp, 8]
