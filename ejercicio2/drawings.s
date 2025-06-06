@@ -1,7 +1,6 @@
     .include "shapes.s"
     .globl draw_floor1
-    .globl draw_moto1
-	.globl draw_moto2
+    .globl draw_moto
     .globl draw_fondo
     .globl draw_nave
     .globl draw_buildings
@@ -61,7 +60,7 @@ draw_fondo:
     add sp, sp, #48
 ret
 
-draw_moto1:
+draw_moto:
     sub sp, sp, #48
     str x1, [sp]
     str x2, [sp, #8]
@@ -241,192 +240,6 @@ draw_moto1:
     ldr x1, [sp]
     add sp, sp, #48
 ret
-
-
-draw_moto2:
-    sub sp, sp, #48
-    str x1, [sp]
-    str x2, [sp, #8]
-    str x3, [sp, #16]
-    str x4, [sp, #24]  
-    str x7, [sp, #32]
-    str x30, [sp, #40]
-    // Moto y Conductor
-	// Estela
-		draw_rectangle 0, 297, 213, 67, RED
-		draw_rectangle 0, 302, 213, 57, RED2
-		draw_rectangle 0, 307, 213, 47, RED3
-
-	// Ruedas
-			draw_circumference 235, 330, 40, 18, BLACK
-			draw_circumference 235, 330, 39, 2, RED
-			draw_circumference 235, 330, 25, 6, RED
-			draw_circumference 425, 330, 40, 18, BLACK
-			draw_circumference 425, 330, 39, 2, RED
-			draw_circumference 425, 330, 25, 6, RED
-
-		// Cuerpo de la moto
-			draw_rectangle 262, 302, 135, 45, BLACK
-			draw_rectangle 220, 285, 60, 20, BLACK
-			draw_rectangle 200, 285, 20, 8, BLACK
-			draw_rectangle 360, 295, 49, 15, BLACK
-			draw_rectangle 280, 290, 35, 15, BLACK
-			draw_rectangle 295, 347, 105, 7, BLACK
-			draw_rectangle 320, 354, 85, 7, BLACK
-
-			// ODC 2025
-				// Letra O
-					draw_rectangle 325, 345, 2, 12, RED
-					draw_rectangle 330, 345, 2, 12, RED
-					draw_rectangle 325, 345, 5, 2, RED
-					draw_rectangle 325, 355, 5, 2, RED
-
-				// Letra D
-					draw_rectangle 340, 345, 2, 12, RED
-					draw_rectangle 335, 351, 2, 6, RED
-					draw_rectangle 335, 355, 5, 2, RED
-					draw_rectangle 335, 349, 5, 2, RED
-
-				// Letra C
-					draw_rectangle 345, 351, 2, 6, RED
-					draw_rectangle 345, 349, 6, 2, RED
-					draw_rectangle 345, 355, 6, 2, RED
-
-				// Número 2
-					draw_rectangle 360, 345, 7, 2, RED
-					draw_rectangle 360, 355, 7, 2, RED
-					draw_rectangle 360, 350, 7, 2, RED
-					draw_rectangle 360, 350, 2, 5, RED
-					draw_rectangle 365, 345, 2, 5, RED
-
-				// Número 0
-					draw_rectangle 370, 345, 2, 12, RED
-					draw_rectangle 375, 345, 2, 12, RED
-					draw_rectangle 370, 345, 5, 2, RED
-					draw_rectangle 370, 355, 5, 2, RED
-
-				// Número 2
-					draw_rectangle 380, 345, 7, 2, RED
-					draw_rectangle 380, 355, 7, 2, RED
-					draw_rectangle 380, 350, 7, 2, RED
-					draw_rectangle 380, 350, 2, 5, RED
-					draw_rectangle 385, 345, 2, 5, RED
-
-				// Número 5
-					draw_rectangle 390, 345, 7, 2, RED
-					draw_rectangle 390, 355, 7, 2, RED
-					draw_rectangle 390, 350, 7, 2, RED
-					draw_rectangle 390, 345, 2, 5, RED
-					draw_rectangle 395, 350, 2, 5, RED
-
-			// Detalles
-				draw_rectangle 200, 285, 2, 8, RED
-				draw_rectangle 265, 287, 2, 12, RED
-				draw_rectangle 267, 299, 2, 12, RED
-				draw_rectangle 269, 311, 8, 2, RED
-				draw_rectangle 200, 285, 65, 2, RED
-				draw_rectangle 320, 335, 25, 2, RED
-				draw_rectangle 345, 333, 20, 2, RED
-				draw_rectangle 365, 331, 10, 2, RED
-				draw_rectangle 375, 329, 3, 2, RED
-				draw_rectangle 378, 316, 2, 13, RED
-				draw_rectangle 402, 301, 2, 8, RED
-				draw_rectangle 404, 299, 5, 2, RED
-				draw_rectangle 407, 296, 2, 3, RED
-				draw_circumference 320, 335, 3, 1, RED
-
-		// Cuerpo conductor
-			//Torso
-				draw_rectangle 300, 285, 50, 25, BLACK
-				draw_rectangle 288, 296, 17, 28, BLACK
-				draw_rectangle 280, 310, 22, 17, BLACK
-				draw_rectangle 266, 320, 17, 15, BLACK
-				draw_rectangle 300, 282, 10, 6, BLACK
-				draw_rectangle 307, 280, 10, 6, BLACK
-				draw_rectangle 313, 277, 10, 5, BLACK
-				draw_rectangle 319, 277, 6, 15, BLACK
-				draw_rectangle 332, 275, 10, 15, BLACK
-				draw_rectangle 288, 296, 17, 28, BLACK
-				draw_rectangle 348, 291, 10, 12, BLACK
-				draw_rectangle 340, 280, 10, 6, BLACK
-				draw_rectangle 340, 287, 10, 6, BLACK
-				draw_rectangle 317, 277, 15, 12, BLACK
-				draw_rectangle 356, 296, 4, 6, BLACK
-
-				// Contorno Torso
-					draw_rectangle 325, 273, 17, 4, RED2
-					draw_rectangle 313, 277, 11, 4, RED
-					draw_rectangle 302, 281, 11, 4, RED3
-					draw_rectangle 298, 286, 4, 7, RED2
-					draw_rectangle 294, 293, 4, 4, RED
-
-			// Pierna
-				draw_rectangle 304, 305, 4, 8, RED3
-				draw_rectangle 284, 322, 4, 4, RED3
-				draw_rectangle 287, 316, 4, 9, RED2
-				draw_rectangle 291, 314, 6, 4, RED3
-				draw_rectangle 296, 310, 10, 4, RED
-				draw_rectangle 264, 327, 20, 4, RED3
-				draw_rectangle 261, 329, 4, 4, RED3
-				draw_rectangle 259, 331, 4, 4, RED2
-				draw_rectangle 252, 335, 9, 4, RED3
-				draw_rectangle 247, 323, 4, 11, RED3
-				draw_rectangle 251, 319, 10, 4, RED2
-				draw_rectangle 261, 315, 4, 4, RED2
-				draw_rectangle 265, 313, 4, 4, RED2
-				draw_rectangle 251, 322, 10, 13, BLACK
-			
-		// Brazo
-			draw_rectangle 394, 308, 22, 12, BLACK
-			draw_rectangle 350, 309, 8, 4, RED3
-			draw_rectangle 358, 312, 8, 4, RED2
-			draw_rectangle 366, 315, 8, 4, RED
-			draw_rectangle 374, 316, 31, 4, RED3
-			draw_rectangle 346, 301, 4, 7, RED2
-			draw_rectangle 405, 317, 9, 4, RED3
-			draw_rectangle 415, 308, 4, 10, RED3
-			draw_rectangle 406, 305, 10, 4, RED3
-			draw_rectangle 390, 307, 16, 4, RED3
-			draw_rectangle 386, 306, 4, 4, RED
-			draw_rectangle 382, 304, 4, 4, RED2
-
-			// Cabeza del conductor
-			draw_rectangle 356, 293, 27, 4, RED
-			draw_rectangle 390, 260, 4, 22, RED
-			draw_rectangle 343, 265, 4, 14, RED
-			draw_rectangle 355, 248, 26, 4, RED
-			draw_rectangle 347, 257, 4, 9, RED
-			draw_rectangle 351, 253, 4, 4, RED3
-			draw_rectangle 381, 252, 4, 4, RED2
-			draw_rectangle 386, 256, 4, 4, RED3
-			draw_rectangle 386, 278, 4, 8, RED3
-			draw_rectangle 347, 279, 4, 4, RED2
-			draw_rectangle 351, 283, 4, 8, RED3
-			draw_rectangle 382, 285, 4, 7, RED
-			draw_circumference 369, 272, 19, 18, BLACK
-			draw_rectangle 355, 251, 26, 41, BLACK
-			draw_rectangle 347, 264, 43, 14, BLACK
-			draw_rectangle 351, 256, 39, 14, BLACK
-			draw_rectangle 351, 279, 4, 4, BLACK
-			draw_rectangle 386, 256, 4, 6, RED
-			draw_rectangle 376, 265, 15, 8, RED3
-			draw_rectangle 369, 262, 8, 3, RED3
-			draw_rectangle 365, 259, 8, 3, RED3
-			draw_rectangle 361, 256, 6, 3, RED3
-			draw_rectangle 355, 253, 7, 3, RED3
-    
-    ldr x30, [sp, #40]
-    ldr x7, [sp, #32]
-    ldr x4, [sp, #24]
-    ldr x3, [sp, #16]
-    ldr x2, [sp, #8]
-    ldr x1, [sp]
-    add sp, sp, #48
-ret
-
-
-
-
 
 draw_floor1:
     sub sp, sp, #48
