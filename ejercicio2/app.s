@@ -10,7 +10,7 @@ main:
     mov x2, SCREEN_HEIGH
     mov x3, BITS_PER_PIXEL
     mul x4, x1, x2          // WIDTH * HEIGHT
-    mul x5, x4, x3          // WIDTH * HEIGHT * BYTES_PER_PIXEL
+    mul x5, x4, x3          // WIDTH * HEIGHT * BITS_PER_PIXEL
     add x21, x20, x5        // Framebuffer oculto
     mov x22, 0               // Frame counter
 
@@ -52,10 +52,10 @@ after_frame:
     mov x2, x21             // Origen (buffer oculto)
     mov x3, x20             // Destino (visible)
 copy_loop:
-    ldr w4, [x2], 4
-    str w4, [x3], 4
-    subs x6, x6, 4
-    b.ne copy_loop
+    ldr w4, [x2], 4      // Lee 4 bytes desde la dirección de origen (x2) y avanza x2
+    str w4, [x3], 4      // Escribe esos 4 bytes en la dirección de destino (x3) y avanza x3
+    subs x6, x6, 4       // Resta 4 al contador de bytes restantes y actualiza los flags
+    b.ne copy_loop       // Si quedan bytes por copiar, repite el bucle
 
     // Espera para siguiente frame
     mov x1, DELAY
