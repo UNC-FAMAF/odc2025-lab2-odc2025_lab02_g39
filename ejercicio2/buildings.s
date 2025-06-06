@@ -15,24 +15,33 @@
 
 
 .macro draw_rectangle_off x, y, w, z, color
-	mov x1, \x  // Mueve el valor
-    add x1, x1, x21   
+	mov x1, \x  // Mueve el valor 
 	mov x2, \y  // de x, y, w, z
-    add x2, x2, x22
 	mov x3, \w  // que se le pasa al macro
 	mov x4, \z  // al registro x1
+	add x1, x1, x27 // Offset horizontal
+	movz x10, (\color >> 16) & 0xFFFF, lsl 16 // Carga bits mas significativos del color en x10
+	movk x10, \color & 0xFFFF, lsl 0 // Carga bits menos significativos del color en x10
+	bl rectangle
+.endm
+
+.macro draw_rectangle_off_nave x, y, w, z, color
+	mov x1, \x  // Mueve el valor 
+	mov x2, \y  // de x, y, w, z
+	mov x3, \w  // que se le pasa al macro
+	mov x4, \z  // al registro x1
+	sub x1, x1, x27 // Offset horizontal negativo
 	movz x10, (\color >> 16) & 0xFFFF, lsl 16 // Carga bits mas significativos del color en x10
 	movk x10, \color & 0xFFFF, lsl 0 // Carga bits menos significativos del color en x10
 	bl rectangle
 .endm
 
 .macro draw_circumference_off x, y, w, z, color
-	mov x1, \x  // Mueve el valor
-    add x1, x1, x21   
+	mov x1, \x  // Mueve el valor 
 	mov x2, \y  // de x, y, w, z
-    add x2, x2, x22
 	mov x3, \w  // que se le pasa al macro
 	mov x4, \z  // al registro x1
+	add x1, x1, x27 // Offset horizontal 
 	movz x10, (\color >> 16) & 0xFFFF, lsl 16 // Carga bits mas significativos del color en x10
 	movk x10, \color & 0xFFFF, lsl 0 // Carga bits menos significativos del color en x10
 	bl circumference
@@ -151,43 +160,43 @@ draw_nave:
 
     // Nave
 	// Parte Superior
-		draw_rectangle_off 422, 65, 88, 8, BORDO
-		draw_rectangle_off 421, 73, 90, 4, RED3
-		draw_rectangle_off 444, 61, 47, 4, BORDO
-		draw_rectangle_off 455, 57, 23, 4, BORDO
-		draw_rectangle_off 455, 65, 23, 4, RED
+		draw_rectangle_off_nave 422, 65, 88, 8, BORDO
+		draw_rectangle_off_nave 421, 73, 90, 4, RED3
+		draw_rectangle_off_nave 444, 61, 47, 4, BORDO
+		draw_rectangle_off_nave 455, 57, 23, 4, BORDO
+		draw_rectangle_off_nave 455, 65, 23, 4, RED
 	
 	// Ala Derecha
-		draw_rectangle_off 507, 100, 7, 40, RED
-		draw_rectangle_off 506, 85, 7, 40, RED
-		draw_rectangle_off 505, 77, 7, 30, RED
-		draw_rectangle_off 504, 100, 7, 40, RED3
-		draw_rectangle_off 503, 85, 7, 40, RED3
-		draw_rectangle_off 502, 77, 7, 30, RED3
-		draw_rectangle_off 500, 100, 7, 40, BORDO
-		draw_rectangle_off 499, 85, 7, 40, BORDO
-		draw_rectangle_off 498, 77, 7, 30, BORDO
-		draw_rectangle_off 480, 137, 20, 3, BORDO
-		draw_rectangle_off 480, 133, 6, 6, BORDO
-		draw_rectangle_off 486, 127, 6, 12, BORDO
-		draw_rectangle_off 492, 121, 6, 18, BORDO
-		draw_rectangle_off 498, 115, 6, 24, BORDO
+		draw_rectangle_off_nave 507, 100, 7, 40, RED
+		draw_rectangle_off_nave 506, 85, 7, 40, RED
+		draw_rectangle_off_nave 505, 77, 7, 30, RED
+		draw_rectangle_off_nave 504, 100, 7, 40, RED3
+		draw_rectangle_off_nave 503, 85, 7, 40, RED3
+		draw_rectangle_off_nave 502, 77, 7, 30, RED3
+		draw_rectangle_off_nave 500, 100, 7, 40, BORDO
+		draw_rectangle_off_nave 499, 85, 7, 40, BORDO
+		draw_rectangle_off_nave 498, 77, 7, 30, BORDO
+		draw_rectangle_off_nave 480, 137, 20, 3, BORDO
+		draw_rectangle_off_nave 480, 133, 6, 6, BORDO
+		draw_rectangle_off_nave 486, 127, 6, 12, BORDO
+		draw_rectangle_off_nave 492, 121, 6, 18, BORDO
+		draw_rectangle_off_nave 498, 115, 6, 24, BORDO
 	
 	// Ala Izquierda
-		draw_rectangle_off 418, 100, 7, 40, RED2
-		draw_rectangle_off 419, 85, 7, 40, RED2
-		draw_rectangle_off 420, 77, 7, 30, RED2
-		draw_rectangle_off 420, 100, 7, 40, RED3
-		draw_rectangle_off 421, 85, 7, 40, RED3
-		draw_rectangle_off 422, 77, 7, 30, RED3
-		draw_rectangle_off 423, 100, 7, 40, BORDO
-		draw_rectangle_off 424, 85, 7, 40, BORDO
-		draw_rectangle_off 425, 77, 7, 30, BORDO
-		draw_rectangle_off 430, 137, 20, 3, BORDO
-		draw_rectangle_off 444, 133, 6, 6, BORDO
-		draw_rectangle_off 438, 127, 6, 12, BORDO
-		draw_rectangle_off 432, 121, 6, 18, BORDO
-		draw_rectangle_off 426, 115, 6, 24, BORDO
+		draw_rectangle_off_nave 418, 100, 7, 40, RED2
+		draw_rectangle_off_nave 419, 85, 7, 40, RED2
+		draw_rectangle_off_nave 420, 77, 7, 30, RED2
+		draw_rectangle_off_nave 420, 100, 7, 40, RED3
+		draw_rectangle_off_nave 421, 85, 7, 40, RED3
+		draw_rectangle_off_nave 422, 77, 7, 30, RED3
+		draw_rectangle_off_nave 423, 100, 7, 40, BORDO
+		draw_rectangle_off_nave 424, 85, 7, 40, BORDO
+		draw_rectangle_off_nave 425, 77, 7, 30, BORDO
+		draw_rectangle_off_nave 430, 137, 20, 3, BORDO
+		draw_rectangle_off_nave 444, 133, 6, 6, BORDO
+		draw_rectangle_off_nave 438, 127, 6, 12, BORDO
+		draw_rectangle_off_nave 432, 121, 6, 18, BORDO
+		draw_rectangle_off_nave 426, 115, 6, 24, BORDO
     
     ldr x30, [sp, #40]
     ldr x7, [sp, #32]
