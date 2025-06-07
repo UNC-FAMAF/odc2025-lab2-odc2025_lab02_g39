@@ -1,6 +1,6 @@
 .include "size.s"
 .include "shapes.s"
-.equ DELAY, 20
+.equ DELAY, 10
 .equ FRAME_COUNT, 2000     // Numero total de frames de la animación
 .globl main
 
@@ -20,7 +20,7 @@ AnimLoop:
 
     // Calcula offset de animación
     mov x23, x22
-    mov x24, 8  // Cantidad de frames que quiero que se mueva la animación
+    mov x24, 1  // Cantidad de frames que quiero que se mueva la animación
     mul x25, x23, x24
     sub x27, xzr, x25        // x27 = -(frame*10)
 
